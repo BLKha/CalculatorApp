@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@100&family=Roboto:wght@300;400;500;700&display=swap');
+:root{
+    --primary-color:#3a4452;
+    --text-color:#fff;
+    --body-color:#b8d2d8;
+    --operator-color:aqua;
+}
 *{
     margin: 0;padding: 0;
     box-sizing: border-box;
@@ -10,10 +16,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #b8d2d8;
+    background: var(--body-color);
 }
 .calculator{
-    background: #3a4452;
+    margin-top: 400px;
+    background: var(--primary-color);
     padding: 20px;
     border-radius: 15px;
     
@@ -28,7 +35,7 @@ body{
     outline: none;
     box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1),5px 5px 15px rgba(0, 0, 0, 0.2);
     background:transparent;
-    color: #fff;
+    color: var(--text-color);
     font-size: 24px;
     cursor: pointer;
 }
@@ -46,5 +53,57 @@ form .display input{
 }
 
 form input.operator{
-    color: aqua;
+    color: var(--operator-color);
+}
+.mode{
+    position: relative;
+    color: #b8d2d8;
+    justify-content: flex-end;
+    display: flex;
+}
+.mode .text{
+    margin-right: 10px;
+}
+/* custom mode */
+
+.Switch{
+    width: 36px;
+    height: 16px;
+    position: relative;
+    display: flex;
+}
+.Switch input{
+    opacity: 0;
+    max-width: 0;
+    max-height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;left: 0;
+    right: 0;bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider{
+    background-color: aqua;
+
+}
+input:checked + .slider:before{
+    transform: translateX(20px);
+}
+#status{
+    padding-left: 5px;
 }

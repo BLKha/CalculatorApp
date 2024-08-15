@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="">
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>CALCULATOR</title>
 </head>
 <body>
     <div class="container">
             <div class="calculator">
         <form>
+            <div class="mode"><p class="text">Light mode</p>
+                <label class="Switch">
+                    <input type="checkbox" id="toggleCheckbox">
+                    <span class="slider"></span>
+                </label>
+                <p id="status">Off</p>
+            </div>
             <div class="display">
                 <input type="text" name="display" placeholder="0" id="display">
             </div>
@@ -48,14 +56,8 @@
         </form>
     </div>
     </div>
-    <script>
-        function calculatePersentage(){
-            let display =document.getElementById('display');
-            
-            if(display.value){
-                display.value= parseFloat(display.value)/100;
-            }
-        }
+    <script src="./script.js">
+ 
     </script>
     
 </body>
