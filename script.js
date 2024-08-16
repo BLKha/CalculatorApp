@@ -13,8 +13,10 @@ function calculatePersentage(){
 toggleCheckbox.addEventListener('change',(e)=>{
     if(e.target.checked){
         statusText.innerHTML='On';
+        document.body.classList.add("lightTheme")
     }else{
         statusText.innerHTML='Off'
+        document.body.classList.remove("lightTheme")
     }
 }
 )
